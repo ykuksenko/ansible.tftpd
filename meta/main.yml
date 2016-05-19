@@ -1,0 +1,13 @@
+galaxy_info:
+  author: Yevgeniy Kuksenko
+  description: Simple tftp server
+  company:
+  license: GPLv3
+  min_ansible_version: 1.2
+  platforms:
+  - name: Fedora
+    versions:
+    - 22
+  galaxy_tags:
+  - tftp
+dependencies: []

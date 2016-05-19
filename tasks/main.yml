@@ -1,0 +1,17 @@
+---
+# tasks file for tftpd
+
+- name: install tftp-server
+  dnf: name=tftp-server state=latest
+
+- name: ensure tftpd is running and enabled
+  service: name=tftp enabled=yes
+
+- name: open port on firewall
+  firewalld: port="{{ item }}" state=enabled permanent=yes immediate=yes
+  with_items:
+   - '68/udp'
+   - '69/udp'
+
+- name: ensure tftpd is running and enabled
+  service: name=tftp state=started

@@ -1,0 +1,5 @@
+---
+# handlers file for tftpd
+
+- name: restart tftpd
+  service: name=tftp state=restarted
